@@ -103,6 +103,55 @@ transforms = [
 output = np.tile(input_pattern, (3, 3))
 ```
 
+## 💡 Solving Examples
+
+### Example 1: Object Removal & Background Reconstruction
+
+![Object Removal Task](images/object_removal_task.png)
+
+**Problem**: Remove black shapes from colorful backgrounds and intelligently fill the holes.
+
+**Solver**: DAGSolver
+**Process**:
+1. **Pattern Recognition**: Identifies black pixels (color 0) as removal targets
+2. **Background Analysis**: Learns surrounding color patterns  
+3. **Transform Sequence**: `filterCol_0` → `extractPattern` → `fillHoles` → `replicate`
+4. **Result**: Clean background with natural hole filling
+
+```python
+dag_solver = create_balanced_dag_solver()
+if dag_solver.can_solve(task):
+    results = dag_solver.solve(task)  # Returns multiple candidates
+```
+
+### Example 2: Pattern Tiling & Expansion
+
+![Tiling Pattern Task](images/tiling_pattern_task.png)
+
+**Problem**: Expand 2×2 color pattern into 6×6 grid through systematic tiling.
+
+**Solver**: TilingSolver
+**Process**:
+1. **Size Detection**: Recognizes 2×2 → 6×6 (3× expansion ratio)
+2. **Pattern Extraction**: Identifies fundamental tile structure
+3. **Tiling Application**: Uses `np.tile(pattern, (3, 3))`
+4. **Result**: Perfect 6×6 tiled output
+
+```python
+tiling_solver = TilingSolver()
+if tiling_solver.can_solve(task):
+    results = tiling_solver.solve(task)  # Returns tiled pattern
+```
+
+### Solver Selection Strategy
+
+| Task Type | Recommended Solver | Key Features |
+|-----------|-------------------|--------------|
+| **Object Removal** | DAGSolver | Multi-step transforms, hole filling |
+| **Pattern Tiling** | TilingSolver | Size ratio detection, systematic repetition |
+| **Symmetry Tasks** | SymmetrySolver | Reflection, rotation, symmetry repair |
+| **Chess Patterns** | ChessSolver | Periodic grids, checkerboard detection |
+
 ## 📊 Performance
 
 | Metric | Value |
