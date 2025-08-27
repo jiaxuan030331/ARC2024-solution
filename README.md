@@ -90,18 +90,13 @@ transforms = [
 ]
 ```
 
-## 🔍 Example: Tiling Task
+## 📖 **[🔥 Detailed Solving Examples →](EXAMPLES.md)**
 
-**Problem**: Expand 2×2 pattern to 6×6 grid
-
-**Input**: `[[blue, magenta], [magenta, yellow]]`  
-**Output**: 6×6 grid with 2×2 pattern repeated 3×3 times
-
-**Solution**:
-```python
-# TilingSolver detects 3x scale factor
-output = np.tile(input_pattern, (3, 3))
-```
+See comprehensive examples of how our solver handles:
+- **Object Removal & Background Reconstruction** (DAGSolver)
+- **Pattern Tiling & Expansion** (TilingSolver)
+- **Solver Selection Strategies**
+- **Advanced Configuration & Usage**
 
 ## 💡 Solving Examples
 
