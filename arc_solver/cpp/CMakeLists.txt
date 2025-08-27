@@ -23,6 +23,7 @@ set(SOURCES
     src/chess_solver.cpp
     src/tiling_solver.cpp
     src/ml_solver.cpp
+    src/dag_solver.cpp
 )
 
 # Create pybind11 module

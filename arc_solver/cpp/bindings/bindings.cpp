@@ -5,6 +5,7 @@
 #include "../include/chess_solver.hpp"
 #include "../include/tiling_solver.hpp"
 #include "../include/ml_solver.hpp"
+#include "../include/dag_solver.hpp"
 
 namespace py = pybind11;
 
@@ -46,4 +47,16 @@ PYBIND11_MODULE(arc_solver_cpp, m) {
         .def("solve", &MLSolverCpp::solve,
              "Solve ML-based tasks and return predictions",
              py::arg("train_inputs"), py::arg("train_outputs"), py::arg("test_inputs"));
+
+    py::class_<arc_solver::DAGSolverCpp>(m, "DAGSolverCpp")
+        .def(py::init<>())
+        .def(py::init<const arc_solver::SolverConfig&>())
+        .def("can_solve", &arc_solver::DAGSolverCpp::can_solve,
+             "Check if the DAG solver can solve the given task",
+             py::arg("train_inputs"), py::arg("train_outputs"))
+        .def("solve", &arc_solver::DAGSolverCpp::solve,
+             "Solve task using DAG-based search and return predictions",
+             py::arg("train_inputs"), py::arg("train_outputs"), py::arg("test_inputs"))
+        .def("get_available_functions", &arc_solver::DAGSolverCpp::getAvailableFunctions,
+             "Get list of available transform functions");
 } 

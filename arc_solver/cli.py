@@ -72,6 +72,7 @@ def main():
         config.enable_ml_solver = "ml" in args.solvers
         config.enable_symmetry_solver = "symmetry" in args.solvers
         config.enable_color_counter_solver = "color_counter" in args.solvers
+        config.enable_dag_solver = "dag" in args.solvers
     
     # Initialize solver
     solver = ArcSolver(config=config)
@@ -116,11 +117,22 @@ def main():
     # Prepare output
     output_data = {}
     for result in results:
-        output_data[result.task_id] = {
+        task_output = {
             'predictions': [pred.tolist() for pred in result.predictions],
             'scores': result.scores,
             'metadata': result.metadata
         }
+        
+        # 添加DAG和专用solver的分别结果
+        if result.dag_predictions:
+            task_output['dag_predictions'] = [pred.tolist() for pred in result.dag_predictions]
+        
+        if result.specialist_predictions:
+            task_output['specialist_predictions'] = [pred.tolist() for pred in result.specialist_predictions]
+        
+        task_output['used_fallback'] = result.used_fallback
+        
+        output_data[result.task_id] = task_output
     
     # Write output
     if args.output:
@@ -132,7 +144,18 @@ def main():
     
     if args.verbose:
         total_predictions = sum(len(r.predictions) for r in results)
+        total_fallbacks = sum(1 for r in results if r.used_fallback)
+        
         print(f"\n📊 Summary: Generated {total_predictions} predictions for {len(results)} tasks")
+        print(f"🔄 Used DAG fallback for {total_fallbacks} tasks")
+        
+        for result in results:
+            if result.used_fallback:
+                primary_source = result.metadata.get('primary_source', 'unknown')
+                specialist_max = result.metadata.get('specialist_max_score', 0.0)
+                dag_max = result.metadata.get('dag_max_score', 0.0)
+                print(f"   Task {result.task_id}: Primary={primary_source}, "
+                      f"Specialist_max={specialist_max:.1f}, DAG_max={dag_max:.1f}")
 
 
 if __name__ == "__main__":

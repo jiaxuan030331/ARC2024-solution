@@ -11,6 +11,7 @@ from .submatrix import SubmatrixSolver, SubmaskSolver
 from .ml import MLSolver
 from .symmetry import SymmetrySolver
 from .color_counter import ColorCounterSolver
+from .dag import DAGSolver, create_fast_dag_solver, create_accurate_dag_solver, create_balanced_dag_solver
 
 __all__ = [
     "BaseSolver",
@@ -22,5 +23,9 @@ __all__ = [
     "SubmaskSolver",
     "MLSolver",
     "SymmetrySolver",
-    "ColorCounterSolver"
+    "ColorCounterSolver",
+    "DAGSolver",
+    "create_fast_dag_solver",
+    "create_accurate_dag_solver", 
+    "create_balanced_dag_solver"
 ] 
