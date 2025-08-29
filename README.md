@@ -1,6 +1,11 @@
 # ARC Solver - Multi-Strategy Abstract Reasoning Solution
 
-A Python framework for solving ARC (Abstract Reasoning Corpus) tasks using multiple specialized algorithms and C++ optimizations, winning SILVER Prize in Kaggle 2024 ARC Competition.
+A Python framework for solving ARC (Abstract Reasoning Corpus) tasks using multiple specialized algorithms and C++ optimizations
+
+# Competition Result
+- **ARC Prize 2024 Kaggle Competition**
+- Final Rank: **25 / 1427 teams** (Top 2%)
+- [Official Leaderboard Screenshot](images/ARC_result.png)
 
 ## 🏗️ Architecture
 
