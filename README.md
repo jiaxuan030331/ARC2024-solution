@@ -5,7 +5,7 @@ A Python framework for solving ARC (Abstract Reasoning Corpus) tasks using multi
 # Competition Result
 - **ARC Prize 2024 Kaggle Competition**
 - Final Rank: **25 / 1427 teams** (Top 2%)
-- ![Official Leaderboard Screenshot](images/ARC_result.png)
+ ![Official Leaderboard Screenshot](images/ARC_result.png)
 
 ## 🏗️ Architecture
 
