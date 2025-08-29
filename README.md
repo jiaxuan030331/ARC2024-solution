@@ -35,7 +35,7 @@ Our ARC solver employs a **multi-strategy architecture** with intelligent solver
 │  ├── Solver Selection Logic                                 │
 │  └── Result Aggregation & Ranking                           │
 ├─────────────────────────────────────────────────────────────┤
-│  Specialized Solvers (9)                                  │
+│  Specialized Solvers (9)                                    │
 │  ├── DAGSolver (C++) ──── Multi-step transformations        │
 │  ├── TilingSolver (C++) ── Pattern repetition               │
 │  ├── SymmetrySolver (C++) ─ Symmetry operations             │
@@ -43,7 +43,7 @@ Our ARC solver employs a **multi-strategy architecture** with intelligent solver
 │  ├── MLSolver (C++) ────── Feature-based classification     │
 │  └── GridSolver (Python) ─ Grid transformations             │
 ├─────────────────────────────────────────────────────────────┤
-│  Core Transform Engine                                       │
+│  Core Transform Engine                                      │
 │  ├── 50+ Transform Functions (C++)                          │
 │  ├── DAG Search Algorithm                                   │
 │  ├── Pattern Extraction & Analysis                          │
