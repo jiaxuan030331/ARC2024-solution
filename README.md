@@ -7,30 +7,17 @@ A Python framework for solving ARC (Abstract Reasoning Corpus) tasks using multi
 - Final Rank: **25 / 1427 teams** (Top 2%)
  ![Official Leaderboard Screenshot](images/ARC_result.png)
 
-## 🏗️ Architecture
-
-```
-arc_solver/
-├── solvers/          # 40+ specialized pattern solvers
-├── cpp/             # C++ optimized implementations  
-├── core/            # Main orchestration logic
-└── utils/           # Support functions and transforms
-```
-
 ## 🚀 Quick Start
 
-```python
-from arc_solver import ArcSolver
+```bash
+# Clone and install
+git clone https://github.com/jiaxuan030331/ARC2024-solution.git
+cd ARC2024-solution
+pip install -r requirements.txt
+pip install -e .
 
-# Initialize solver
-solver = ArcSolver()
-
-# Load and solve task
-task = solver.load_task("path/to/task.json")
-result = solver.solve(task)
-
-# Get predictions
-predictions = result.get_predictions()
+# Run demo
+python demo.py
 ```
 
 ## 📖 **[🔥 Complete Examples & Technical Details →](EXAMPLES.md)**
@@ -40,18 +27,6 @@ See comprehensive examples of:
 - **Engineering Architecture & Design**
 - **Solver Selection Strategies**
 - **Performance Benchmarks**
-- **Installation & Deployment**
-
-## 🛠️ Installation
-
-```bash
-# Basic installation
-pip install -r requirements.txt
-
-# With C++ optimizations
-pip install -e .
-cd arc_solver/cpp && python setup.py build_ext --inplace
-```
 
 ## 📊 Performance
 
