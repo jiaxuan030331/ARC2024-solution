@@ -35,7 +35,7 @@ Our ARC solver employs a **multi-strategy architecture** with intelligent solver
 │  ├── Solver Selection Logic                                 │
 │  └── Result Aggregation & Ranking                           │
 ├─────────────────────────────────────────────────────────────┤
-│  Specialized Solvers (40+)                                  │
+│  Specialized Solvers (9)                                  │
 │  ├── DAGSolver (C++) ──── Multi-step transformations        │
 │  ├── TilingSolver (C++) ── Pattern repetition               │
 │  ├── SymmetrySolver (C++) ─ Symmetry operations             │
@@ -63,7 +63,7 @@ arc_solver/
 │   ├── dag.py              # Multi-step transformation solver
 │   ├── tiling.py           # Pattern tiling & repetition
 │   ├── symmetry.py         # Symmetry detection & repair
-│   └── [35+ other solvers] # Chess, ML, Grid, Color, etc.
+│   └── [6 other solvers] # Chess, ML, Grid, Color, etc.
 ├── cpp/                    # C++ optimized implementations
 │   ├── include/            # Headers for all C++ solvers
 │   ├── src/               # Optimized algorithm implementations
