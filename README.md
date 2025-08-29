@@ -20,6 +20,58 @@ pip install -e .
 python demo.py
 ```
 
+## 🏗️ Engineering Architecture & Design
+
+### System Overview
+
+Our ARC solver employs a **multi-strategy architecture** with intelligent solver selection and C++ optimizations for performance-critical algorithms.
+
+```
+┌─────────────────────────────────────────────────────────────┐
+│                    ARC Solver Framework                     │
+├─────────────────────────────────────────────────────────────┤
+│  Main Controller (Python)                                   │
+│  ├── Task Analysis & Pattern Recognition                    │
+│  ├── Solver Selection Logic                                 │
+│  └── Result Aggregation & Ranking                           │
+├─────────────────────────────────────────────────────────────┤
+│  Specialized Solvers (40+)                                  │
+│  ├── DAGSolver (C++) ──── Multi-step transformations        │
+│  ├── TilingSolver (C++) ── Pattern repetition               │
+│  ├── SymmetrySolver (C++) ─ Symmetry operations             │
+│  ├── ChessSolver (C++) ──── Periodic patterns               │
+│  ├── MLSolver (C++) ────── Feature-based classification     │
+│  └── GridSolver (Python) ─ Grid transformations             │
+├─────────────────────────────────────────────────────────────┤
+│  Core Transform Engine                                       │
+│  ├── 50+ Transform Functions (C++)                          │
+│  ├── DAG Search Algorithm                                   │
+│  ├── Pattern Extraction & Analysis                          │
+│  └── Candidate Generation & Scoring                         │
+└─────────────────────────────────────────────────────────────┘
+```
+
+### Core Project Structure
+
+```
+arc_solver/
+├── core/                    # Main orchestration logic
+│   ├── solver.py            # ArcSolver main class & pipeline
+│   ├── config.py            # Configuration management
+│   └── patterns.py          # Pattern recognition algorithms
+├── solvers/                 # Specialized solving algorithms (40+)
+│   ├── dag.py              # Multi-step transformation solver
+│   ├── tiling.py           # Pattern tiling & repetition
+│   ├── symmetry.py         # Symmetry detection & repair
+│   └── [35+ other solvers] # Chess, ML, Grid, Color, etc.
+├── cpp/                    # C++ optimized implementations
+│   ├── include/            # Headers for all C++ solvers
+│   ├── src/               # Optimized algorithm implementations
+│   └── bindings/          # Python-C++ integration layer
+├── cpp_wrappers/          # Python interfaces for C++ solvers
+└── utils/                 # Support functions & utilities
+```
+
 ## 📖 **[🔥 Complete Examples & Technical Details →](EXAMPLES.md)**
 
 See comprehensive examples of:
