@@ -7,7 +7,7 @@ A Python framework for solving ARC (Abstract Reasoning Corpus) tasks using multi
 - Final Rank: **25 / 1427 teams** (Top 2%)
  ![Official Leaderboard Screenshot](images/ARC_result.png)
 
-## 🚀 Quick Start
+## Quick Start
 
 ```bash
 # Clone and install
@@ -20,7 +20,7 @@ pip install -e .
 python demo.py
 ```
 
-## 🏗️ Engineering Architecture & Design
+## Engineering Architecture & Design
 
 ### System Overview
 
@@ -72,7 +72,7 @@ arc_solver/
 └── utils/                 # Support functions & utilities
 ```
 
-## 📖 **[🔥 Complete Examples & Technical Details →](EXAMPLES.md)**
+##  **[ Complete Examples & Technical Details →](EXAMPLES.md)**
 
 See comprehensive examples of:
 - **Detailed Solving Workflows** (Object Removal, Pattern Tiling)
@@ -80,7 +80,7 @@ See comprehensive examples of:
 - **Solver Selection Strategies**
 - **Performance Benchmarks**
 
-## 📊 Performance
+## Performance
 
 | Metric | Value |
 |--------|-------|
